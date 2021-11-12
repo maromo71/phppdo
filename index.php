@@ -48,14 +48,14 @@ $stmt->execute();
                 <tbody>
                     <?php while ($user = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
                         <tr>
-                            <td><?php echo $user['name'] ?></td>
-                            <td><?php echo $user['email'] ?></td>
-                            <td><?php echo ($user['gender'] == 'm') ? 'Masculino' : 'Feminino' ?></td>
-                            <td><?php echo dateConvert($user['birthdate']) ?></td>
-                            <td><?php echo calculateAge($user['birthdate']) ?> anos</td>
+                            <td><?=$user['name'] ?></td>
+                            <td><?=$user['email'] ?></td>
+                            <td><?=($user['gender'] == 'm') ? 'Masculino' : 'Feminino' ?></td>
+                            <td><?=dateConvert($user['birthdate']) ?></td>
+                            <td><?=calculateAge($user['birthdate']) ?> anos</td>
                             <td>
-                                <a href="form-edit.php?id=<?php echo $user['id'] ?>">Editar</a>
-                                <a href="delete.php?id=<?php echo $user['id'] ?>" 
+                                <a href="form-edit.php?id=<?=$user['id'] ?>">Editar</a>
+                                <a href="delete.php?id=<?=$user['id'] ?>" 
                                    onclick="return confirm('Tem certeza de que deseja remover?');">
                                     Remover
                                 </a>
